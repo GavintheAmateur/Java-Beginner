@@ -1,0 +1,20 @@
+
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter Beijing Time");
+		int t = in.nextInt();
+		int utc = 0;
+		
+		if 	(0 <=t && t < 759)
+			utc = 1600 + t;
+		else if (800 <=t && t < 859)
+			utc = t- 800;
+		else if (800 <=t && t < 2359)
+			utc = t- 800;	
+		
+		System.out.println(utc);
+	}	
+}
