@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int s = in.nextInt();
+		
+		String meaning = null;
+		String[] R = {
+			"unreadable",
+			"barely readable, occasional words distinguishable",
+			"readable with considerable difficulty",
+			"readable with practically no difficulty",
+			"perfectly readable"
+			};
+		String[] S = {
+			"Faint signals, barely perceptible",	
+			"Very weak signals",
+			"Weak signals",
+			"Fair signals",
+			"Fairly good signals",
+			"Good signals",
+			"Moderately strong signals",
+			"Strong signals",
+			"Extremely strong signals",			
+		};
+
+		meaning = S[s%10-1] + ", " + R[s/10-1] +".";
+		System.out.print(meaning);
+	}	
+}
