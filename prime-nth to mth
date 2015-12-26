@@ -1,0 +1,40 @@
+package homework;
+
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int m = in.nextInt();
+		int sum = 0;
+		int cnt = 0;
+		int currentNum = 2;
+		boolean isPrime;
+		
+		while (true) {
+			
+			isPrime = true;
+			for (int i = 2; i < currentNum; i++) {
+				if (currentNum % i == 0) {
+					isPrime = false;
+					break;
+				}
+			}
+			
+			if (isPrime)
+				cnt++;
+			
+			if (cnt <= m && cnt >=n && isPrime)
+				sum += currentNum;
+			
+			if (cnt >=m)
+				break;
+			
+		    currentNum ++;
+		}
+		
+		System.out.println(sum);
+	}
+}
