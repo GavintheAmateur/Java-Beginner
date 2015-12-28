@@ -1,68 +1,70 @@
 import java.util.Scanner;
-public class Main {
+ 
+ public class Main {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		int n = in.nextInt();
-		
-		int[][] board = new int[n][n];
-		String flag = "NIL";
-		
-		
-		for (int i = 0; i < n; i ++) {
-			for (int j = 0; j < n; j ++) {
-				board [i][j] = in.nextInt();
-			}
-		}
-		
-		for (int i = 0; i < n; i ++) {
-			int sum = 0;
-			for (int j = 0; j < n; j ++) {
-				sum += board [i][j];
-				
-			}
-			if (sum == n ) {
-				flag = "X"; break; }
-			else if (sum == 0) {
-					flag = "O"; break; }
-			
-		}
-		
-for (int j = 0; j < n; j ++) {
-			int sum = 0;
-			for (int i = 0; i < n; i ++) {
-				sum += board [i][j];
-				
-			}
-			if (sum == n ) {
-				flag = "X"; break; }
-			else if (sum == 0) {
-					flag = "O"; break; }
-		}
+ 	public static void main(String[] args) {
+ 		Scanner in = new Scanner(System.in);
+ 		int n = in.nextInt();
+ 		int sum = 0;
+ 		
+ 		int[][] board = new int[n][n];
+ 		String flag = "NIL";
+ 		
+ 		
+ 		for (int i = 0; i < n; i ++) {
+ 			for (int j = 0; j < n; j ++) {
+ 				board [i][j] = in.nextInt();
+ 			}
+ 		}
+ 		
+ 		for (int i = 0; i < n; i ++) {
+ 			sum = 0;
+ 			for (int j = 0; j < n; j ++) {
+ 				sum += board [i][j];
+ 				
+ 			}
+ 			if (sum == n ) {
+ 				flag = "X"; break; }
+ 			else if (sum == 0) {
+ 					flag = "O"; break; }
+ 			
+ 		}
+ 		
+ for (int j = 0; j < n; j ++) {
+ 			sum = 0;
+ 			for (int i = 0; i < n; i ++) {
+ 				sum += board [i][j];
+ 				
+ 			}
+ 			if (sum == n ) {
+ 				flag = "X"; break; }
+ 			else if (sum == 0) {
+ 					flag = "O"; break; }
+ 		}
 
-{
-int sum = 0;
-for (int k = 0; k < n; k ++)  {
-	sum += board[k][k];
-}
+ {
+ sum = 0;
+ for (int k = 0; k < n; k ++)  {
+ 	sum += board[k][k];
+ }
 
-if (sum == n ) {
-	flag = "X";  }
-else if (sum == 0 || sum == n) {
-		flag = "O";  }
-}
-	
-{
-int sum = 0;
-for (int k = 0; k < n; k ++)  {
-	sum += board[k][n-k];
-}
+ if (sum == n ) {
+ 	flag = "X";  }
+ else if (sum == 0 || sum == n) {
+ 		flag = "O";  }
+ }
+ 	
+ {
+sum = 0;
+ for (int k = 0; k < n; k ++)  {
+ 	sum += board[k][n-k-1];
+ }
 
-if (sum == n ) {
-	flag = "X";  }
-else if (sum == 0 || sum == n) {
-		flag = "O";  }
-}
-		System.out.print(flag);
-	}	
-}
+ if (sum == n ) {
+ 	flag = "X";  }
+ else if (sum == 0 || sum == n) {
+ 		flag = "O";  }
+ }
+ 		System.out.print(flag);
+ 	}	
+ }
