@@ -1,0 +1,42 @@
+public class test {
+public static void main(String[] args) {
+	String s = "$GPRMC,024813.640,A,3158.4608,N,11848.3737,E,10.05,324.27,150706,,,A*50";
+	int xor = 'G' ^ 'P';
+	
+
+	
+	for (int i = 2; i < s.length()-3; i++) {
+		if (s.charAt(i)!= ',')
+			xor = xor ^ s.charAt(i); 
+		System.out.println(xor);
+	}
+	
+	
+}
+}
+
+
+
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		boolean isValid = true;
+		
+		while (true) {
+			String input = in.nextLine();
+			if (input.equals("END")) {
+				break;
+			}
+			
+			if (!input.startsWith("$GPRMC")) {
+				isValid = false;
+			}
+			
+			if ()
+		
+		}
+	}	
+}
