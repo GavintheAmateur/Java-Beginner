@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class Main {
+		public static boolean isPrime (int i) {
+			boolean isPrime = true;
+			for (int k = 2; k < i; k ++) {
+				if (i % k == 0) {isPrime = false; break;}
+			}
+			return isPrime;
+		}
+		
+		public static void main(String[] args) {
+			
+		Scanner in = new Scanner (System.in);
+		int input = in.nextInt();
+		System.out.print(input+"=");
+		int n = input;
+		
+		if (isPrime(n))
+			System.out.print(n);
+		else {
+			outterLoop: for (int i = 2; i <= 100000; i++) {
+				while (n % i == 0) { 
+					n = n / i;
+					if (isPrime(n)) {
+						System.out.print(i+"x"+n);
+						break outterLoop;
+					}
+					else System.out.print(i+"x");
+				}
+			}
+		}
+	}
+}
