@@ -1,0 +1,47 @@
+ import java.util.*;
+ 
+ 
+ public class Main {
+	 
+			 
+	 private ArrayList<String> cities = new ArrayList<String>();
+	 private int[][] distance; 
+	 Scanner in = new Scanner(System.in);
+
+	 void  setTable () {		 
+		 String input;
+		 while (true) { 
+			 input = in.next();
+			 if (!input.equals("###"))
+			 	cities.add(input);
+			 else break;
+		 }
+		 
+		 int n = cities.size();
+		 
+		 distance = new int [n][n];
+		 for (int i= 0; i < n ; i ++) {
+			 for (int j= 0; j < n ; j ++) {
+				 distance[i][j] = in.nextInt();
+			 }
+		 }
+	 }
+	 
+	 int getDistance (String a, String b) {
+		 
+		 return distance[cities.indexOf(a)][cities.indexOf(b)];
+	 }
+	 
+	 
+ 	public static void main(String[] args) {
+ 		
+ 		Main table1 = new Main();
+ 		table1.setTable();
+ 		Scanner in = new Scanner(System.in);
+ 		System.out.println(table1.getDistance(in.next(),in.next()));
+ 		
+ 		
+ 	}
+
+ }
+
